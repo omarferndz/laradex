@@ -3,10 +3,14 @@
 @section('title', 'Trainers Create')
 
 @section('content')
-    <div class="form-group">
-        <label for="">Nombre</label>
-        <input type="text" class="form-control">
-    </div>
+    <form class="form-group" method="POST" action="/trainers">
+        @csrf <!--laravel este seguro de que esa identificacion viene 
+        de un usuario identificado--> 
+        <div class="form-group">
+            <label for="">Nombre</label>
+            <input type="text" name="name" class="form-control">
+        </div>
 
-    <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>        
 @endsection
