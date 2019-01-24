@@ -4,7 +4,7 @@
 
 @section('content')
     <form class="form-group" method="POST" action="/trainers">
-        @csrf <!--laravel este seguro de que esa identificacion viene 
+        @csrf <!--laravel esta seguro de que esa identificacion viene 
         de un usuario identificado--> 
         <div class="form-group">
             <label for="">Nombre</label>
