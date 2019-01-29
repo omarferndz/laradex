@@ -36,7 +36,7 @@ class TrainerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {             
         if($request->hasFile('avatar')){
             $file = $request->file('avatar');
             $name = time().$file->getClientOriginalName();
@@ -44,6 +44,7 @@ class TrainerController extends Controller
         }
         $trainer = new Trainer();
         $trainer->name = $request->input('name');
+        $trainer->description = $request->input('description');
         $trainer->avatar = $name;
         $trainer->save();
 
