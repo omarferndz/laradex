@@ -57,8 +57,10 @@ class TrainerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Trainer $trainer)
+    public function show($slug)
     {
+        //return $slug; 
+        $trainer = Trainer::where('slug','=',$slug)->firstOrFail();
         //$trainer = Trainer::find($id); 
         return view('trainers.show', compact('trainer'));
     }
