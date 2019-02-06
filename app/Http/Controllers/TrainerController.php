@@ -46,6 +46,7 @@ class TrainerController extends Controller
         $trainer->name = $request->input('name');
         $trainer->description = $request->input('description');
         $trainer->avatar = $name;
+        $trainer->slug = $request->input('slug');
         //$trainer->slug = str_slug($request->input('name'));
         $trainer->save();
 

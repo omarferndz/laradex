@@ -1,26 +1,33 @@
-@extends('layouts.app') <!--hereda de la carpeta layouts/app.blade.php-->
+ @extends('layouts.app') <!--hereda de la carpeta layouts/app.blade.php-->
 
 @section('title', 'Trainers Create')
 
 @section('content')
-    <form class="form-group" method="POST" action="/trainers" enctype="multipart/form-data">
-        @csrf <!--laravel esta seguro de que esa identificacion viene 
-        de un usuario identificado--> 
+    {!! Form::open(['route' => 'trainers.store', 'method' => 'POST', 'files' => true ]) !!} 
         <div class="form-group">
-            <label for="">Nombre</label>
-            <input type="text" name="name" class="form-control">
-        </div>    
-
-        <div class="form-group">
-            <label for="">Descripción</label>
-            <input type="text" name="description" class="form-control">
+            {!! Form::label('name','Nombre') !!}
+            {!! Form::text('name', null, ['class' => 'form-control']) !!}
         </div>
 
         <div class="form-group">
-            <label for="">Avatar</label>
-            <input type="file" name="avatar">
+            {!! Form::label('slug','Slug') !!}
+            {!! Form::text('slug', null, ['class' => 'form-control']) !!}
         </div>
 
-        <button type="submit" class="btn btn-primary">Guardar</button>
-    </form>        
+        <div class="form-group">
+            {!! Form::label('name','Descripcion') !!}
+            {!! Form::text('description', null, ['class' => 'form-control']) !!}
+        </div>
+
+        <div class="form-group">
+            {!! Form::label('avatar','Avatar') !!}
+            {!! Form::file('avatar') !!}
+        </div>
+
+        {!! Form::submit('Guardar', ['class' =>'btn btn-primary']) !!}
+
+
+    {!! Form::close() !!}
+
+          
 @endsection
