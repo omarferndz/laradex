@@ -17,3 +17,4 @@
     {!! Form::label('avatar','Avatar') !!}
     {!! Form::file('avatar') !!}
 </div>
+
