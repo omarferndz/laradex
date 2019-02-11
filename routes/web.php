@@ -26,3 +26,7 @@ Route::get('/name/{name}/lastname/{lastname?}', function ($name, $lastname = 'ap
 Route::get('/mi_primera_ruta', function() {
     return 'Hello World, esta es mi primera ruta :D.';
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
